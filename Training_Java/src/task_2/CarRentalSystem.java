@@ -77,12 +77,15 @@ public class CarRentalSystem implements PrintVehicles {
 			
 		}
 		sc.close();
+		System.out.println("=============================");
+		System.out.println("谢谢使用本租车系统");
 		
 	}
 	
 	//方法：是否需要租车
 	public boolean isNeeded() {
 		System.out.println("欢迎使用租车系统：");
+		System.out.println("=============================");
 		System.out.println("您是否需要租车：1是 2否");
 
 		int flag = sc.nextInt();
@@ -177,8 +180,8 @@ public class CarRentalSystem implements PrintVehicles {
 		}
 		System.out.println("  共载货：" + getTotalVolumeOfCargo() + "吨");
 
-		
 		System.out.println("***租车总价格：" + getTotalCost() + "元");
+		
 	}
 	
 	//方法：计算总金额/总载货量/总载客量
