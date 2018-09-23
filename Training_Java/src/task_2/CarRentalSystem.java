@@ -63,8 +63,10 @@ public class CarRentalSystem implements PrintVehicles {
 		
 		CarRentalSystem carRenSys = new CarRentalSystem();
 		sc = new Scanner(System.in);
+		System.out.println("欢迎使用租车系统：");
 		//判断是否需要租车
-		if (carRenSys.isNeeded()) {
+		boolean flag = carRenSys.isNeeded();
+		for (; flag; ) {
 			//初始化租车列表
 			carRenSys.initialize();
 			//打印租车列表信息
@@ -74,6 +76,9 @@ public class CarRentalSystem implements PrintVehicles {
 			//生成客户租车账单
 			carRenSys.calculateTotal();
 			carRenSys.generateBill();
+			if(carRenSys.isNeeded() == false) {
+				break;
+			}
 			
 		}
 		sc.close();
@@ -84,7 +89,6 @@ public class CarRentalSystem implements PrintVehicles {
 	
 	//方法：是否需要租车
 	public boolean isNeeded() {
-		System.out.println("欢迎使用租车系统：");
 		System.out.println("=============================");
 		System.out.println("您是否需要租车：1是 2否");
 
